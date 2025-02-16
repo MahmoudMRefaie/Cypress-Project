@@ -40,5 +40,14 @@ jobs:
   jop2:
     runs-on: ubuntu-latest
     steps:
-    - name: Run test
-      run: npx cypress run --spec "cypress/e2e/${{ inputs.path }}"
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: 🏗 Install Cypress
+        run: npx cypress install
+
+      - name: Run test
+        run: npx cypress run --spec "cypress/e2e/${{ inputs.path }}"
