@@ -50,4 +50,4 @@ jobs:
         run: npx cypress install
 
       - name: Run test
-        run: npx cypress run --spec "cypress/e2e/${{ inputs.path }}"
+        run: npx cypress run --spec "cypress/e2e/tests/${{ inputs.path }}"
