@@ -27,7 +27,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "greet"
-  greet:
+  greeting:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -54,6 +54,11 @@ jobs:
 
       - name: Run test
         run: npx cypress run --spec "cypress/e2e/tests/${{ inputs.path }}"
+
+      - name: Generate HTML report
+        run: |
+         npx mochawesome-merge cypress/reports/*.json > cypress/reports/report.json,
+         npx marge cypress/reports/report.json -o cypress/reports
 
       - name: Upload Mochawesome Report
         uses: actions/upload-artifact@v4
