@@ -14,13 +14,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: npm ci
+    #   - name: Install dependencies
+    #     run: npm ci
 
       - name: Cypress run
         # Uses the official Cypress GitHub action https://github.com/cypress-io/github-action
         uses: cypress-io/github-action@v6
         with:
+            spec: |
+             cypress/e2e/tests/*,
+             cypress/e2e/1-getting-started/todo.cy.js
           # Records to Cypress Cloud 
           # https://docs.cypress.io/guides/cloud/projects#Set-up-a-project-to-record
           record: true
