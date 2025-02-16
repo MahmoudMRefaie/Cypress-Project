@@ -49,5 +49,18 @@ jobs:
       - name: 🏗 Install Cypress
         run: npx cypress install
 
+      - name: Install Mochawesome
+        run: npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator
+
       - name: Run test
         run: npx cypress run --spec "cypress/e2e/tests/${{ inputs.path }}"
+
+      - name: Upload Mochawesome Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: mochawesome-report
+          path: cypress/reports/mochawesome.html
+          retention-days: 7  # Optional: Keeps the artifact for 7 days
+
+      
+
