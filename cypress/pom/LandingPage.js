@@ -15,7 +15,7 @@ class LoginPage {
         cy.get(`[value=${gender}]`).click()
         cy.get('#userPassword').type(password)
         cy.get('#confirmPassword').type(password)
-        cy.contains('I am 18 year or Older').siblings('div').check()
+        cy.contains('I am 18 year or Older').siblings('div').click()
         cy.get('[type=submit]').click()  
     }
   
