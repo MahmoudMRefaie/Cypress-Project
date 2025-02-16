@@ -1,4 +1,4 @@
-import LandingPage from '../pom/LandingPage';
+import LandingPage from '../../pom/LandingPage';
 
 const email = `Mahmoud_${Date.now()}@Cypress.com`
 const password = 'MahmoudPass123'

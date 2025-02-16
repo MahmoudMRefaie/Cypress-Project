@@ -1,7 +1,7 @@
-import LandingPage from '../pom/LandingPage';
-import ProductPage from '../pom/ProductPage';
-import CheckoutPage from '../pom/CheckoutPage';
-import ShippingPage from '../pom/ShippingPage';
+import LandingPage from '../../pom/LandingPage';
+import ProductPage from '../../pom/ProductPage';
+import CheckoutPage from '../../pom/CheckoutPage';
+import ShippingPage from '../../pom/ShippingPage';
 
 describe('Register and Login Test', () => {
 
