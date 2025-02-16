@@ -16,7 +16,9 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-            spec: cypress/e2e/tests/*,
+          spec: |
+             cypress/e2e/tests/*,
+             cypress/e2e/1-getting-started/todo.cy.js
           # Records to Cypress Cloud 
           # https://docs.cypress.io/guides/cloud/projects#Set-up-a-project-to-record
           record: true
